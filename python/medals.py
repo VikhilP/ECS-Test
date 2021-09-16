@@ -24,7 +24,6 @@ def createMedalTable(results):
     # The winner gets 3 points, second place 2 points and third place 1 point
     medalTable = {}
     for sport in results:
-        print(sport.get("podium"))
         for pos in sport.get("podium"):
             if pos[2:] not in medalTable:
                 medalTable[pos[2:]] = 0
