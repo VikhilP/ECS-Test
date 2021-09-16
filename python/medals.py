@@ -16,13 +16,29 @@ medalResults = [
         "podium": ["1.USA", "2.France", "3.Brazil"]
     }
 ]
+print(medalResults)
+print(medalResults[0].get("podium")[0][2:])
 
 def createMedalTable(results):
     # Use the results object above to create a medal table
     # The winner gets 3 points, second place 2 points and third place 1 point
+    medalTable = {}
+    for sport in results:
+        print(sport.get("podium"))
+        for pos in sport.get("podium"):
+            if pos[2:] not in medalTable:
+                medalTable[pos[2:]] = 0
+            if pos[:1] == 1:
+                medalTable[pos[2:]] += 3
+            elif pos[:1] == 2:
+                medalTable[pos[2:]] += 2
+            elif pos[:1] == 3:
+                medalTable[pos[2:]] += 1
+
+
     return
 
-
+##print(createMedalTable(medalResults))
 def test_function():
     #This it the test function, please don't change me
     medalTable = createMedalTable(medalResults)
