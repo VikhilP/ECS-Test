@@ -19,7 +19,7 @@ medalResults = [
 ]
 print(medalResults)
 print(medalResults[0].get("podium")[0][:1])
-print(medalResults[0].get("podium")[0][:1]==1)
+print(int(medalResults[0].get("podium")[0][:1])== 1)
 
 def createMedalTable(results):
     # Use the results object above to create a medal table
@@ -36,29 +36,30 @@ def createMedalTable(results):
             #print(medalTable[pos[2:]])
             temp = {}
             
-            if pos[:1] is 1:
+            if int(pos[:1])== 1:
                 # num+=3
                 # temp = {pos[2:]:num}
                 #print(temp)
                 print("first")
                 medalTable[pos[2:]] +=3
-            elif pos[:1] is 2:
+            elif int(pos[:1]) == 2:
                 # num+=2
                 # temp = {pos[2:]:num}
                 print("sec")
-                medalTable[pos[2:]] += num+2
-            elif pos[:1] is 3:
+                medalTable[pos[2:]] +=2
+            elif int(pos[:1]) == 3:
                 # num+=1
                 # temp = {pos[2:]:num}
                 print("thrid")
-                medalTable[pos[2:]] += num+1
+                medalTable[pos[2:]] +=1
             #print(temp)
-            medalTable.update(temp)
+            #medalTable.update(temp)
     print(medalTable)
     return medalTable
 medalTable = createMedalTable(medalResults)
 #print(medalTable)
 #print(medalTable["China"])
+
 def test_function():
     #This it the test function, please don't change me
     medalTable = createMedalTable(medalResults)
