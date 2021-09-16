@@ -17,9 +17,6 @@ medalResults = [
         "podium": ["1.USA", "2.France", "3.Brazil"]
     }
 ]
-print(medalResults)
-print(medalResults[0].get("podium")[0][:1])
-print(int(medalResults[0].get("podium")[0][:1])== 1)
 
 def createMedalTable(results):
     # Use the results object above to create a medal table
@@ -29,36 +26,16 @@ def createMedalTable(results):
         for pos in sport.get("podium"):
             if pos[2:] not in medalTable:
                 medalTable[pos[2:]] = 0
-                #print(medalTable)
-            #print(pos[:1])
-            #print(pos[2:])
-            num = medalTable[pos[2:]]
-            #print(medalTable[pos[2:]])
-            temp = {}
-            
+                
             if int(pos[:1])== 1:
-                # num+=3
-                # temp = {pos[2:]:num}
-                #print(temp)
-                print("first")
                 medalTable[pos[2:]] +=3
             elif int(pos[:1]) == 2:
-                # num+=2
-                # temp = {pos[2:]:num}
-                print("sec")
                 medalTable[pos[2:]] +=2
             elif int(pos[:1]) == 3:
-                # num+=1
-                # temp = {pos[2:]:num}
-                print("thrid")
                 medalTable[pos[2:]] +=1
-            #print(temp)
-            #medalTable.update(temp)
-    print(medalTable)
+
     return medalTable
-medalTable = createMedalTable(medalResults)
-#print(medalTable)
-#print(medalTable["China"])
+
 
 def test_function():
     #This it the test function, please don't change me
