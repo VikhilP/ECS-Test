@@ -28,6 +28,7 @@ def createMedalTable(results):
         for pos in sport.get("podium"):
             if pos[2:] not in medalTable:
                 medalTable[pos[2:]] = 0
+            print(pos[:1])
             if pos[:1] == 1:
                 medalTable[pos[2:]] += 3
             elif pos[:1] == 2:
@@ -36,9 +37,9 @@ def createMedalTable(results):
                 medalTable[pos[2:]] += 1
 
 
-    return
+    return medalTable
 
-##print(createMedalTable(medalResults))
+print(createMedalTable(medalResults))
 def test_function():
     #This it the test function, please don't change me
     medalTable = createMedalTable(medalResults)
