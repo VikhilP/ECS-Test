@@ -29,6 +29,7 @@ def createMedalTable(results):
             if pos[2:] not in medalTable:
                 medalTable[pos[2:]] = 0
             print(pos[:1])
+            print(pos[2:])
             if pos[:1] == 1:
                 medalTable[pos[2:]] += 3
             elif pos[:1] == 2:
@@ -38,8 +39,9 @@ def createMedalTable(results):
 
 
     return medalTable
-
-print(createMedalTable(medalResults))
+medalTable = createMedalTable(medalResults)
+print(medalTable)
+print(medalTable["China"])
 def test_function():
     #This it the test function, please don't change me
     medalTable = createMedalTable(medalResults)
